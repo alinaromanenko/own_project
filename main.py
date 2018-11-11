@@ -7,6 +7,9 @@ while True:
     except FileNotFoundError:
         print('Файл {} не найден.'.format(file_str))
 value = input('Введите то, что нужно исключить: ')
+
+# Чтобы удалить слово, необходимо ввести его с 1 пробелом в начале или в конце.
+
 with open('output.txt', 'w') as output_file:
     for line in input_file:
         for i in range(len(line)):
@@ -19,3 +22,5 @@ with open('output.txt', 'w') as output_file:
                     border = border + len(value)
             else:
                 break
+if f_letter == -1:
+    print('В файле {} "{}" не найдено.'.format(file_str, value))
